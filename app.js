@@ -19,6 +19,10 @@ app.get("/cat", function(req, res){
 	res.send("<h1>WOOF!</h1><h2>WOOF!</h2><h3>WOOF!</h3>" );
 });
 
+app.get("/PineMartin", function(req, res){
+	res.send("<h1>PINE MARTIN SAY \"DONT FUCK WITH ME!!!\"");
+});
+
 app.get("/r/:subredditName", function(req, res){
 	console.log("SOMEONE ACCESSED A SUBREDDIT");
 	res.send("<h1>WELCOME TO A SUB-REDDIT</h1>");
