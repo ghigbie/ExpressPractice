@@ -29,7 +29,12 @@ app.get("r/:subredditName/comments/:id/:title/", function(req, res){
 	res.send("<h1>WELCOME TO THE COMMENTS PAGE</h1>");
 });
 
-app.listen(process.envPORT, process.env.IP, function(){
+app.get("/*", function()req, res){
+	console.log("SOMEONE ACCESSED THE DEFAULT PAGE");
+	res.send("<h1>THIS IS THE DEFAULT PAGE</h1><h1>THIES WOULD BE A GREAT PAGE NOT FOUND REQUEST</h1>");
+});
+
+app.listen(3000, function(){
 	console.log("Server has started. Yay!!!")
 });
 
