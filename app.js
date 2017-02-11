@@ -10,11 +10,26 @@ app.get("/bye", function(req, res){
 });
 
 app.get("/dog", function(req, res){
-	console.log("SOME MAD A REQUEST TO /DOG");
+	console.log("SOMEONE MADE A REQUEST TO /DOG");
 	res.send("<h1>MEOW!</h1><h2>MEOW!</h2><h3>MEWO!</h3>" );
 });
 
 app.get("/cat", function(req, res){
-	console.log("SOME MAD A REQUEST TO /CAT");
+	console.log("SOMEONE MADE A REQUEST TO /CAT");
 	res.send("<h1>WOOF!</h1><h2>WOOF!</h2><h3>WOOF!</h3>" );
-})
+});
+
+app.get("/r/:subredditName", function(req, res){
+	console.log("SOMEONE ACCESSED A SUBREDDIT");
+	res.send("<h1>WELCOME TO A SUB-REDDIT</h1>");
+});
+
+app.get("r/:subredditName/comments/:id/:title/", function(req, res){
+	console.log("SOMEONE ACCESSED A COMMENTS PAGE OF A SUBREDDIT");
+	res.send("<h1>WELCOME TO THE COMMENTS PAGE</h1>");
+});
+
+app.listen(process.envPORT, process.env.IP, function(){
+	console.log("Server has started. Yay!!!")
+});
+
